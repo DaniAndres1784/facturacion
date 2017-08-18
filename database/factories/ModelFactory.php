@@ -1,5 +1,5 @@
 <?php
-
+use models\Suscriptor;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -20,5 +20,13 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
         'email' => $faker->unique()->safeEmail,
         'password' => $password ?: $password = bcrypt('secret'),
         'remember_token' => str_random(10),
+    ];
+});
+
+$factory->define(App\models\Suscriptor::class, function (Faker\Generator $faker){
+    return [
+        'nombres'=>$faker->name,
+        'apellidos'=>$faker->lastName,
+        'cedula'=>$faker->text($maxNbChars = 30) 
     ];
 });
