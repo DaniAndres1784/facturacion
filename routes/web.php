@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('facturacion/suscriptores', [
+    'uses'=>'SuscriptoresController@inicio',
+    'as'=>'facturacion.suscriptores'
+]);
+
